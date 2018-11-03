@@ -44,18 +44,16 @@ to this one:
    -                                                               +
 12 |                                                               |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-16 |                            Reserved                           |
+16 |   Reserved    |S|  labelShift |            Reserved           |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ```
 
 The Route Label expansion is to deal with horizon limits observed in
 cjdns/Hyperboria.
+As a consequence, the labelShift is one bit longer.
 
+Congest and Penalty are removed because they were unused by cjdns.
 The Reserved bytes must be set to 0x00.
-
-Other fields are moved because they were not used except for the
-labelShift. The labelShift becomes unnecessary with the longer
-Route Label.
 
 ## Routing Layer
 
